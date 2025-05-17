@@ -1,0 +1,7 @@
+{
+  "name": "Vitalizing_Serenade",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/binbinmods/VitalizingSerenade",
+  "description": "A fun mod, showing what life would be like if you were to have Vitalizing Serenade.",
+  "dependencies": ["BepInEx-BepInExPack_AcrossTheObelisk-5.4.23"]
+}
