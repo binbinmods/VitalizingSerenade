@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>com.binbin.VitalizingSerenade</AssemblyName>
     <Product>VitalizingSerenade</Product>
-    <Version>1.0.0</Version>
+    <Version>0.1.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -44,12 +44,12 @@
     <Reference Include="PhotonRealtime">
       <HintPath>../../!libs/PhotonRealtime.dll</HintPath>
     </Reference> -->
-    <!-- <Reference Include="com.stiffmeds.obeliskialessentials">
+    <Reference Include="com.stiffmeds.obeliskialessentials">
       <HintPath>../../!libs/com.stiffmeds.obeliskialessentials.dll</HintPath>
     </Reference>
     <Reference Include="com.stiffmeds.obeliskialcontent">
       <HintPath>../../!libs/com.stiffmeds.obeliskialcontent.dll</HintPath>
-    </Reference> -->
+    </Reference>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

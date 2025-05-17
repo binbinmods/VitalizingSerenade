@@ -4,7 +4,7 @@ using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Configuration;
 using HarmonyLib;
-// using static Obeliskial_Essentials.Essentials;
+using static Obeliskial_Essentials.Essentials;
 using System;
 
 
@@ -42,9 +42,9 @@ namespace VitalizingSerenade
 
         public static ConfigEntry<bool> EnableMod { get; set; }
         public static ConfigEntry<bool> EnableDebugging { get; set; }
-        public static ConfigEntry<bool> EnableRandomFish { get; set; }
-        public static ConfigEntry<bool> EnableIncreasedRods { get; set; }
-        public static ConfigEntry<bool> EnableBonusFish { get; set; }
+        public static ConfigEntry<bool> EnableRandomSerenades { get; set; }
+        // public static ConfigEntry<bool> EnableIncreasedRods { get; set; }
+        public static ConfigEntry<bool> EnableBonusSerenades { get; set; }
 
         internal int ModDate = int.Parse(DateTime.Today.ToString("yyyyMMdd"));
         private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
@@ -63,23 +63,24 @@ namespace VitalizingSerenade
             // Sets the title, default values, and descriptions
             EnableMod = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableMod"), true, new ConfigDescription("Enables the mod. If false, the mod will not work then next time you load the game."));
             EnableDebugging = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableDebugging"), true, new ConfigDescription("Enables the debugging"));
-            EnableRandomFish = Config.Bind(new ConfigDefinition("VitalizingSerenade", "RandomFish"), true, new ConfigDescription("Adds random fish at various points of the game."));
-            EnableIncreasedRods = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableIncreasedRods"), true, new ConfigDescription("Increases the number of fishing rods you find."));
-            EnableBonusFish = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableBonusFish"), true, new ConfigDescription("Bonus Fish?."));
+            EnableRandomSerenades = Config.Bind(new ConfigDefinition("VitalizingSerenade", "Random Serenades"), true, new ConfigDescription("Vitalizing Serenade is now a card reward for all."));
+            // EnableIncreasedRods = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableIncreasedRods"), true, new ConfigDescription("Increases the number of fishing rods you find."));
+            EnableBonusSerenades = Config.Bind(new ConfigDefinition("VitalizingSerenade", "Bonus Serenades"), true, new ConfigDescription("Chace to shuffle Serenades into your deck each turn."));
 
 
             // DevMode = Config.Bind(new ConfigDefinition("VitalizingSerenade", "DevMode"), false, new ConfigDescription("Enables all of the things for testing."));
 
 
             // Register with Obeliskial Essentials, delete this if you don't need it.
-            // RegisterMod(
-            //     _name: PluginInfo.PLUGIN_NAME,
-            //     _author: "binbin",
-            //     _description: "Sample Plugin",
-            //     _version: PluginInfo.PLUGIN_VERSION,
-            //     _date: ModDate,
-            //     _link: @"https://github.com/binbinmods/SampleCSharpWorkspace"
-            // );
+            RegisterMod(
+                _name: PluginInfo.PLUGIN_NAME,
+                _author: "binbin",
+                _description: "Vitalizing Serenade",
+                _version: PluginInfo.PLUGIN_VERSION,
+                _date: ModDate,
+                _link: @"https://github.com/binbinmods/VitalizingSerenade",
+                _contentFolder: "VitalizingSerenade"
+            );
 
             // apply patches, this functionally runs all the code for Harmony, running your mod
             if (EnableMod.Value) { harmony.PatchAll(); }

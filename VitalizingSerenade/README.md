@@ -1,18 +1,15 @@
 # Vitalizing Serenade
 
-This is a simple mod that fundamentally replaces the NPCs in acts 2 and 3 with fishier ones.
+This mod makes Vitalizing Serenade more prominant, and potentially better.
 
-It also has the option of increasing the number of fishing rods you get, replacing some card rewards with fish, and giving you random bonus fish every turn.
+This has not been tested in multiplayer yet, so let me know if there are any issues! Note: there are likely to be a good number of them.
 
-This has not been tested in multiplayer yet, so let me know if there are any issues!
-
-| Config              | Default | Explanation                                                                                 |
-| :------------------ | :-----: | :------------------------------------------------------------------------------------------ |
-| EnableMod           |  true   | Enables the mod. If false, the mod will not work then next time you load the game.          |
-| EnableDebugging     |  true   | Enables debugging for if errors occur. Please enable this before submitting a LogOutput.log |
-| EnableRandomFish    |  true   | Gives you random fish as card rewards.                                                      |
-| EnableIncreasedRods |  true   | Gives you more fishing rods.                                                                |
-| EnableBonusFish     |  true   | Randomly shuffles fish into your deck.                                                      |
+| Config                | Default | Explanation                                                                                 |
+| :-------------------- | :-----: | :------------------------------------------------------------------------------------------ |
+| EnableMod             |  true   | Enables the mod. If false, the mod will not work then next time you load the game.          |
+| EnableDebugging       |  true   | Enables debugging for if errors occur. Please enable this before submitting a LogOutput.log |
+| EnableRandomSerenades |  true   | Gives you vitalizing serenades as card rewards.                                             |
+| EnableBonusSerenades  |  true   | Randomly shuffles vitalizing sereandes into your deck.                                      |
 
 ## Installation (manual)
 

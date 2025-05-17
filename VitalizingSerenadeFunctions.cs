@@ -74,6 +74,26 @@ namespace VitalizingSerenade
 
         }
 
+        public static string GetVitalizingSerenadeUpgraded(string seed = "", int randInt = 0)
+        {
+            string cardName = "vitalizingserenadespecial";
+            randInt = randInt == 0 ? SafeRandomInt(0, 100, seed: seed) : randInt;
+            if (randInt < 10)
+            {
+                cardName += "rare";
+            }
+            else if (randInt < 30)
+            {
+                cardName += "a";
+            }
+            else if (randInt < 50)
+            {
+                cardName += "b";
+            }
+            return cardName;
+
+        }
+
 
 
 
