@@ -6,6 +6,7 @@ using BepInEx.Configuration;
 using HarmonyLib;
 using static Obeliskial_Essentials.Essentials;
 using System;
+using static Obeliskial_Essentials.CardDescriptionNew;
 
 
 // The Plugin csharp file is used to specify some general info about your plugin. and set up things for 
@@ -81,7 +82,9 @@ namespace VitalizingSerenade
                 _link: @"https://github.com/binbinmods/VitalizingSerenade",
                 _contentFolder: "VitalizingSerenade"
             );
-
+            string text = $"{medsSpriteText("thorns")} on heroes cannot be Purged unless specified";
+            string cardId =
+            AddTextToCardDescription(text, TextLocation.Beginning,);
             // apply patches, this functionally runs all the code for Harmony, running your mod
             if (EnableMod.Value) { harmony.PatchAll(); }
         }

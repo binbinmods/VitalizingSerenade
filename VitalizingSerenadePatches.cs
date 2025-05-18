@@ -81,8 +81,6 @@ namespace VitalizingSerenade
                 }
 
                 hero.SetAura(hero, GetAuraCurseData("stanzai"), 1, useCharacterMods: false);
-
-
             }
         }
 
@@ -133,6 +131,17 @@ namespace VitalizingSerenade
             string cardName = GetVitalizingSerenadeUpgraded(seed);
             __result = cardName;
 
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Hero), "SetInitialCards")]
+        public static void SetInitialCardsPostfix(ref Hero __instance, HeroData heroData)
+        {
+            LogDebug("SetInitialCardsPostfix");
+            // UnityEngine.Random.InitState((AtOManager.Instance.GetGameId() + __instance.SourceName + PluginInfo.PLUGIN_GUID).GetDeterministicHashCode());
+            List<string> cards = __instance?.Cards;
+            cards?.Add("vitalizingserenadespecial");
+            __instance.Cards = cards;
         }
 
 
