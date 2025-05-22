@@ -77,7 +77,9 @@ namespace VitalizingSerenade
         public static string GetVitalizingSerenadeUpgraded(string seed = "", int randInt = 0)
         {
             string cardName = "vitalizingserenadespecial";
-            randInt = randInt == 0 ? SafeRandomInt(0, 100, seed: seed) : randInt;
+            UnityEngine.Random.InitState(seed.GetDeterministicHashCode());
+
+            randInt = randInt == 0 ? UnityEngine.Random.Range(0, 100) : randInt;
             if (randInt < 10)
             {
                 cardName += "rare";

@@ -38,7 +38,11 @@ namespace VitalizingSerenade
             int auxInt = 0,
             string auxString = "")
         {
-            int serenadeChance = 30;
+            if (__instance == null)
+            {
+                return;
+            }
+            int serenadeChance = 10;
             bool addSerenade = EnableBonusSerenades.Value && MatchManager.Instance.GetRandomIntRange(0, 100) < serenadeChance;
             if (addSerenade && theEvent == Enums.EventActivation.BeginRound)
             {
@@ -58,6 +62,12 @@ namespace VitalizingSerenade
                 MatchManager.Instance.GetCardData(cardInDictionary1);
                 MatchManager.Instance.GenerateNewCard(1, cardInDictionary1, false, Enums.CardPlace.RandomDeck, heroIndex: index);
             }
+            if (theEvent == Enums.EventActivation.BeginTurnAboutToDealCards)
+            {
+                Character hero = __instance;
+                hero?.SetAura(hero, GetAuraCurseData("stanzai"), 1, useCharacterMods: false);
+            }
+
 
             if (theEvent == Enums.EventActivation.BeginCombat)
             {
@@ -71,16 +81,18 @@ namespace VitalizingSerenade
                 if (addSerenade)
                 {
                     int index = hero.HeroIndex;
-                    string seed = AtOManager.Instance.currentMapNode + AtOManager.Instance.GetGameId();
+                    // string seed = AtOManager.Instance.currentMapNode + AtOManager.Instance.GetGameId();
                     // int randInt = MatchManager.Instance.GetRandomIntRange(0, 100);
-                    string cardName = GetVitalizingSerenadeUpgraded(seed);
-                    LogDebug($"Adding {cardName} to {hero.SourceName}");
+                    int randInt = MatchManager.Instance.GetRandomIntRange(0, 100);
+                    string cardName = GetVitalizingSerenadeUpgraded(randInt: randInt);
+
+                    LogDebug($"Adding {cardName} to {hero?.SourceName}");
                     string cardInDictionary1 = MatchManager.Instance.CreateCardInDictionary(cardName);
                     MatchManager.Instance.GetCardData(cardInDictionary1);
                     MatchManager.Instance.GenerateNewCard(1, cardInDictionary1, false, Enums.CardPlace.RandomDeck, heroIndex: index);
                 }
 
-                hero.SetAura(hero, GetAuraCurseData("stanzai"), 1, useCharacterMods: false);
+
             }
         }
 
@@ -118,9 +130,11 @@ namespace VitalizingSerenade
             {
                 return;
             }
+            LogDebug($"GetCardByRarityPostfix {rarity} {__result}");
             int serenadeRewardChance = 5;
             string seed = AtOManager.Instance.currentMapNode + AtOManager.Instance.GetGameId() + __result;
-            bool addSerenadeReward = SafeRandomInt(0, 100) < serenadeRewardChance;
+            UnityEngine.Random.InitState(seed.GetDeterministicHashCode());
+            bool addSerenadeReward = UnityEngine.Random.Range(0, 100) < serenadeRewardChance;
             if (!addSerenadeReward)
             {
                 return;
@@ -140,7 +154,8 @@ namespace VitalizingSerenade
             LogDebug("SetInitialCardsPostfix");
             // UnityEngine.Random.InitState((AtOManager.Instance.GetGameId() + __instance.SourceName + PluginInfo.PLUGIN_GUID).GetDeterministicHashCode());
             List<string> cards = __instance?.Cards;
-            cards?.Add("vitalizingserenadespecial");
+            cards?.Add("vitalizingserenadespecialb");
+            cards?.Add("vitalizingserenadespecialb");
             __instance.Cards = cards;
         }
 

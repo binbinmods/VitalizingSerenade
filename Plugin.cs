@@ -83,8 +83,8 @@ namespace VitalizingSerenade
                 _contentFolder: "VitalizingSerenade"
             );
             string text = $"{medsSpriteText("thorns")} on heroes cannot be Purged unless specified";
-            string cardId =
-            AddTextToCardDescription(text, TextLocation.Beginning,);
+            string cardId = "vsbriarcoat";
+            AddTextToCardDescription(text, TextLocation.Beginning, cardId, includeRare: true);
             // apply patches, this functionally runs all the code for Harmony, running your mod
             if (EnableMod.Value) { harmony.PatchAll(); }
         }
