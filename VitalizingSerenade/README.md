@@ -9,7 +9,7 @@ This has not been tested in multiplayer yet, so let me know if there are any iss
 | EnableMod             |  true   | Enables the mod. If false, the mod will not work then next time you load the game.          |
 | EnableDebugging       |  true   | Enables debugging for if errors occur. Please enable this before submitting a LogOutput.log |
 | EnableRandomSerenades |  true   | Gives you vitalizing serenades as card rewards.                                             |
-| EnableBonusSerenades  |  true   | Randomly shuffles vitalizing sereandes into your deck.                                      |
+| EnableBonusSerenades  |  true   | Randomly shuffles vitalizing serenades into your deck.                                      |
 
 ## Installation (manual)
 

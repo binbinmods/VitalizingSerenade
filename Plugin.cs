@@ -22,7 +22,8 @@ namespace VitalizingSerenade
 
     // If you have other dependencies, such as obeliskial content, make sure to include them here.
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    // [BepInDependency("com.stiffmeds.obeliskialessentials")] // this is the name of the .dll in the !libs folder.
+    [BepInDependency("com.stiffmeds.obeliskialessentials")] // this is the name of the .dll in the !libs folder.
+    [BepInDependency("com.stiffmeds.obeliskialcontent")] // this is the name of the .dll in the !libs folder.
     [BepInProcess("AcrossTheObelisk.exe")] //Don't change this
 
     // If PluginInfo isn't working, you are either:
@@ -82,9 +83,14 @@ namespace VitalizingSerenade
                 _link: @"https://github.com/binbinmods/VitalizingSerenade",
                 _contentFolder: "VitalizingSerenade"
             );
+
+
             string text = $"{medsSpriteText("thorns")} on heroes cannot be Purged unless specified";
+            // LogDebug($"Adding Text to Briar Coat {text}");
             string cardId = "vsbriarcoat";
-            AddTextToCardDescription(text, TextLocation.Beginning, cardId, includeRare: true);
+            AddTextToCardDescription(text, TextLocation.ItemBeginning, cardId, includeRare: true);
+            // cardId = "vsbriarcoatrare";
+            // AddTextToCardDescription(text, TextLocation.ItemBeginning, cardId);
             // apply patches, this functionally runs all the code for Harmony, running your mod
             if (EnableMod.Value) { harmony.PatchAll(); }
         }
