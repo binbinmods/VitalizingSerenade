@@ -4,7 +4,7 @@
     "DefaultPercentRare": 30.0,
     "DefaultPercentUncommon": 70.0,
     "GoldQuantity": 75,
-    "ID": "vssirenloot",
+    "ID": "vsowlloot",
     "LootItemTable": [
         "{\n    \"LootCard\": \"vsvitalizingscore\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"vsluteoflife\",\n    \"LootPercent\": 100.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",

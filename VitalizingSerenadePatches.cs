@@ -30,6 +30,8 @@ namespace VitalizingSerenade
 
 
 
+
+
         [HarmonyPostfix]
         [HarmonyPatch(typeof(Character), nameof(Character.SetEvent))]
         public static void SetEventPostfix(ref Character __instance,
@@ -38,7 +40,7 @@ namespace VitalizingSerenade
             int auxInt = 0,
             string auxString = "")
         {
-            if (__instance == null)
+            if (__instance == null || MatchManager.Instance == null)
             {
                 return;
             }
