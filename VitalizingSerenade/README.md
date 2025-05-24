@@ -2,6 +2,10 @@
 
 This mod makes Vitalizing Serenade more prominant, and potentially better.
 
+If you have any suggestions for things you would like to see, let me know!
+
+Additionally, if you run into a bug where the game freezes on card rewards, set "EnableRandomSerenades" to be false. That should fix the issue.
+
 This has not been tested in multiplayer yet, so let me know if there are any issues! Note: there are likely to be a good number of them.
 
 | Config                | Default | Explanation                                                                                 |

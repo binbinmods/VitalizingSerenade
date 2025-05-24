@@ -47,6 +47,7 @@ namespace VitalizingSerenade
         public static ConfigEntry<bool> EnableRandomSerenades { get; set; }
         // public static ConfigEntry<bool> EnableIncreasedRods { get; set; }
         public static ConfigEntry<bool> EnableBonusSerenades { get; set; }
+        public static ConfigEntry<bool> ChangeAllNames { get; set; }
 
         internal int ModDate = int.Parse(DateTime.Today.ToString("yyyyMMdd"));
         private readonly Harmony harmony = new(PluginInfo.PLUGIN_GUID);
@@ -66,7 +67,7 @@ namespace VitalizingSerenade
             EnableMod = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableMod"), true, new ConfigDescription("Enables the mod. If false, the mod will not work then next time you load the game."));
             EnableDebugging = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableDebugging"), true, new ConfigDescription("Enables the debugging"));
             EnableRandomSerenades = Config.Bind(new ConfigDefinition("VitalizingSerenade", "Random Serenades"), true, new ConfigDescription("Vitalizing Serenade is now a card reward for all."));
-            // EnableIncreasedRods = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableIncreasedRods"), true, new ConfigDescription("Increases the number of fishing rods you find."));
+            ChangeAllNames = Config.Bind(new ConfigDefinition("VitalizingSerenade", "ChangeAllNames"), true, new ConfigDescription("Makes it so that all cards are named Vitalizing Serenade. Restart the game upon changing this."));
             EnableBonusSerenades = Config.Bind(new ConfigDefinition("VitalizingSerenade", "Bonus Serenades"), true, new ConfigDescription("Chace to shuffle Serenades into your deck each turn."));
 
 

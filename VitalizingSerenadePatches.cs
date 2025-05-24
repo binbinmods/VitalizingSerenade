@@ -99,6 +99,91 @@ namespace VitalizingSerenade
         }
 
         [HarmonyPostfix]
+        [HarmonyPatch(typeof(AtOManager), "GlobalAuraCurseModificationByTraitsAndItems")]
+        // [HarmonyPriority(Priority.Last)]
+        public static void GlobalAuraCurseModificationByTraitsAndItemsPostfix(ref AtOManager __instance, ref AuraCurseData __result, string _type, string _acId, Character _characterCaster, Character _characterTarget)
+        {
+            // LogInfo($"GACM {subclassName}");
+
+            Character characterOfInterest = _type == "set" ? _characterTarget : _characterCaster;
+            string traitOfInterest;
+            switch (_acId)
+            {
+                case "vitality":
+                    traitOfInterest = "vsguitarpick";
+                    string traitOfInterest2 = "vsguitarpickrare";
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, traitOfInterest2, AppliesTo.Heroes))
+                    {
+                        __result.MaxMadnessCharges += 100;
+
+                    }
+                    else if (IfCharacterHas(characterOfInterest, CharacterHas.Item, traitOfInterest, AppliesTo.Heroes))
+                    {
+                        __result.MaxMadnessCharges += 50;
+
+                    }
+                    break;
+                case "thorns":
+                    traitOfInterest = "vsbriarcoat";
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, traitOfInterest, AppliesTo.Heroes))
+                    {
+                        __result.Removable = false;
+
+                    }
+                    traitOfInterest = "vsbriarcoatrare";
+                    if (IfCharacterHas(characterOfInterest, CharacterHas.Item, traitOfInterest, AppliesTo.Heroes))
+                    {
+                        __result.Removable = false;
+
+                    }
+                    break;
+
+
+            }
+        }
+
+        // [HarmonyPostfix]
+        // [HarmonyPatch(typeof(CardData), nameof(CardData.Init))]
+
+        // public static void InitPostfix(ref string ___cardName, string newId)
+        // {
+        //     if (ChangeAllNames.Value)
+        //     {
+        //         ___cardName = "Vitalizing Serenade";
+
+        //     }
+        // }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(CardItem), nameof(CardItem.SetCard))]
+
+        public static void SetCardPostfix(
+            string id,
+            ref TMP_Text ___titleTextTM,
+            ref TMP_Text ___titleTextTBlue,
+            ref TMP_Text ___titleTextTGold,
+            ref TMP_Text ___titleTextTRed,
+            ref TMP_Text ___titleTextTPurple,
+            bool deckScale = true,
+            Hero _theHero = null,
+            NPC _theNPC = null,
+            bool GetFromGlobal = false,
+            bool _generated = false
+            )
+        {
+            if (ChangeAllNames.Value)
+            {
+                ___titleTextTM.text = "Vitalizing Serenade";
+                // ___titleTextTBlue.text = "Vitalizing Serenade";
+                // ___titleTextTGold.text = "Vitalizing Serenade";
+                // ___titleTextTRed.text = "Vitalizing Serenade";
+                // ___titleTextTPurple.text = "Vitalizing Serenade";
+
+            }
+
+        }
+
+        [HarmonyPostfix]
         [HarmonyPatch(typeof(CardCraftManager), nameof(CardCraftManager.ShowElements))]
         public static void ShowElementsPostfix(ref CardCraftManager __instance, string direction, ref BotonGeneric ___BG_Remove, string cardId = "")
         {
@@ -134,7 +219,7 @@ namespace VitalizingSerenade
             }
             LogDebug($"GetCardByRarityPostfix {rarity} {__result}");
             int serenadeRewardChance = 5;
-            string seed = AtOManager.Instance.currentMapNode + AtOManager.Instance.GetGameId() + __result;
+            string seed = AtOManager.Instance?.currentMapNode ?? "" + AtOManager.Instance.GetGameId() + __result;
             UnityEngine.Random.InitState(seed.GetDeterministicHashCode());
             bool addSerenadeReward = UnityEngine.Random.Range(0, 100) < serenadeRewardChance;
             if (!addSerenadeReward)
@@ -160,6 +245,7 @@ namespace VitalizingSerenade
             cards?.Add("vitalizingserenadespecialb");
             __instance.Cards = cards;
         }
+
 
 
 

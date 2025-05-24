@@ -6,7 +6,7 @@
     "GoldQuantity": 50,
     "ID": "chappel",
     "LootItemTable": [
-        "{\n    \"LootCard\": \"vsgracefulring\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
+        "{\n    \"LootCard\": \"vsguitarpick\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"vsvitalring\",\n    \"LootPercent\": 70.0,\n    \"LootRarity\": \"Common\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"healthpotion\",\n    \"LootPercent\": 50.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"None\"\n}",
         "{\n    \"LootCard\": \"sacredtablet\",\n    \"LootPercent\": 50.0,\n    \"LootRarity\": \"Uncommon\",\n    \"LootType\": \"None\"\n}",
