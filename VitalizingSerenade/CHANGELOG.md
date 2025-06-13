@@ -1,3 +1,9 @@
+# 0.1.2
+
+Purple Lute of Life is now an accessory.
+
+Ring of Song works with songs ≥3.
+
 # 0.1.1
 
 Added additional guaranteed drops

@@ -1,6 +1,6 @@
 {
   "name": "Vitalizing_Serenade",
-  "version_number": "0.1.1",
+  "version_number": "0.1.2",
   "website_url": "https://github.com/binbinmods/VitalizingSerenade",
   "description": "A fun mod, makes Vitalizing Serenade more prominant, more synergistic, and potentially better.",
   "dependencies": ["meds-Obeliskial_Content-1.5.5","meds-Obeliskial_Essentials-1.4.8"]
