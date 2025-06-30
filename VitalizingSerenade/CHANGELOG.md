@@ -1,3 +1,9 @@
+# 0.1.3
+
+Updated README description
+
+Melodic Guitar no longer vanishes.
+
 # 0.1.2
 
 Purple Lute of Life is now an accessory.

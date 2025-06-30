@@ -2,7 +2,15 @@
 
 This mod makes Vitalizing Serenade more prominant, and potentially better.
 
-If you have any suggestions for things you would like to see, let me know!
+This mod is supposed to do the following:
+
+1. Buff Vitalizing Serenade
+2. Add 2 Vitalizing Serenades to everyone's deck
+3. Make Vitalizing Serenade completely unremovable
+4. Add additional Vitalizing Serenades to the card rewards/craft pool
+5. Make Vitalizing Serenade more common as card rewards
+6. Add a bunch of Vitalizing Serenade themed items
+7. Change the name of everything to Vitalizing Serenade
 
 Additionally, if you run into a bug where the game freezes on card rewards, set "EnableRandomSerenades" to be false. That should fix the issue.
 
@@ -14,6 +22,9 @@ This has not been tested in multiplayer yet, so let me know if there are any iss
 | EnableDebugging       |  true   | Enables debugging for if errors occur. Please enable this before submitting a LogOutput.log |
 | EnableRandomSerenades |  true   | Gives you vitalizing serenades as card rewards.                                             |
 | EnableBonusSerenades  |  true   | Randomly shuffles vitalizing serenades into your deck.                                      |
+| ChangeAllNames        |  false  | Names all White Versions of cards Vitalizing Serenade.                                      |
+
+If you have any suggestions for things you would like to see, let me know!
 
 ## Installation (manual)
 

@@ -67,9 +67,9 @@ namespace VitalizingSerenade
             EnableMod = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableMod"), true, new ConfigDescription("Enables the mod. If false, the mod will not work then next time you load the game."));
             EnableDebugging = Config.Bind(new ConfigDefinition("VitalizingSerenade", "EnableDebugging"), true, new ConfigDescription("Enables the debugging"));
             EnableRandomSerenades = Config.Bind(new ConfigDefinition("VitalizingSerenade", "Random Serenades"), true, new ConfigDescription("Vitalizing Serenade is now a card reward for all."));
-            ChangeAllNames = Config.Bind(new ConfigDefinition("VitalizingSerenade", "ChangeAllNames"), true, new ConfigDescription("Makes it so that all cards are named Vitalizing Serenade. Restart the game upon changing this."));
-            EnableBonusSerenades = Config.Bind(new ConfigDefinition("VitalizingSerenade", "Bonus Serenades"), true, new ConfigDescription("Chace to shuffle Serenades into your deck each turn."));
 
+            EnableBonusSerenades = Config.Bind(new ConfigDefinition("VitalizingSerenade", "Bonus Serenades"), true, new ConfigDescription("Chace to shuffle Serenades into your deck each turn."));
+            ChangeAllNames = Config.Bind(new ConfigDefinition("VitalizingSerenade", "ChangeAllNames"), false, new ConfigDescription("Makes it so that all cards are named Vitalizing Serenade. Restart the game upon changing this."));
 
             // DevMode = Config.Bind(new ConfigDefinition("VitalizingSerenade", "DevMode"), false, new ConfigDescription("Enables all of the things for testing."));
 
